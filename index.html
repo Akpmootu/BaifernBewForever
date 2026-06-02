@@ -31,7 +31,6 @@
 
   <!-- Background Music Element -->
   <audio id="bg-music" loop preload="auto">
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     <!-- fallback local music path if user places a music.mp3 file -->
     <source src="music.mp3" type="audio/mpeg">
   </audio>
@@ -98,9 +97,9 @@
   <div id="main-content" class="main-layout hidden">
     
     <!-- Floating Music Controls -->
-    <div id="music-widget" class="music-controller">
+    <div id="music-widget" class="music-controller paused">
       <button id="music-toggle-btn" class="music-btn" aria-label="Toggle Music">
-        <i class="fa-solid fa-compact-disc spin-animation"></i>
+        <i class="fa-solid fa-play"></i>
       </button>
       <div class="music-tooltip">เล่นเพลง</div>
     </div>

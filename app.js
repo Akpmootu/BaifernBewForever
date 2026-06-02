@@ -155,15 +155,30 @@ openEnvelopeBtn.addEventListener("click", (e) => {
   }, 400);
 });
 
+function updateMusicIcon(isPlaying) {
+  const icon = musicToggleBtn.querySelector("i");
+  const tooltip = document.querySelector(".music-tooltip");
+  if (!icon) return;
+  if (isPlaying) {
+    icon.className = "fa-solid fa-music spin-animation";
+    if (tooltip) tooltip.textContent = "ปิดเพลง";
+  } else {
+    icon.className = "fa-solid fa-play";
+    if (tooltip) tooltip.textContent = "เล่นเพลง";
+  }
+}
+
 function playMusic() {
   ytPlayRequested = true;
   if (ytPlayer && ytReady && typeof ytPlayer.playVideo === 'function') {
     ytPlayer.playVideo();
     musicWidget.classList.remove("paused");
+    updateMusicIcon(true);
   } else {
     // Fallback to HTML5 audio if YouTube is not ready
     bgMusic.play().then(() => {
       musicWidget.classList.remove("paused");
+      updateMusicIcon(true);
     }).catch((err) => {
       console.log("Audio autoplay prevented. Awaiting user interaction.", err);
     });
@@ -175,9 +190,11 @@ function pauseMusic() {
   if (ytPlayer && ytReady && typeof ytPlayer.pauseVideo === 'function') {
     ytPlayer.pauseVideo();
     musicWidget.classList.add("paused");
+    updateMusicIcon(false);
   } else {
     bgMusic.pause();
     musicWidget.classList.add("paused");
+    updateMusicIcon(false);
   }
 }
 
