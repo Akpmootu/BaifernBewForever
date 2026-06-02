@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Baifern & Bew | E-Wedding Card</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Open Graph Meta Tags (Rich Link Preview) -->
+  <meta property="og:title" content="Baifern & Bew | E-Wedding Card">
+  <meta property="og:description" content="เรียนเชิญร่วมงานฉลองมงคลสมรส Baifern (Premrat) & Bew (Phutthapon) #BaifernBewForever วันศุกร์ที่ 26 กรกฎาคม 2026 ณ Beach Yard Hostel Koh Phangan">
+  <meta property="og:image" content="Retouch/Wedding-584.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="Retouch/Wedding-584.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Sarabun:wght@200;300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Music Element -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <!-- fallback local music path if user places a music.mp3 file -->
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- YouTube Hidden Player Container -->
+  <div id="youtube-player" style="position: absolute; top: -9999px; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none;"></div>
+
+
+  <!-- 1. ENVELOPE COVER PAGE (ซองเปิดการ์ด) -->
+  <div id="envelope-cover" class="envelope-wrapper">
+    <div class="leaf-decorations">
+      <div class="leaf leaf-1"></div>
+      <div class="leaf leaf-2"></div>
+    </div>
+    
+    <div class="envelope-container">
+      <div class="envelope-card">
+        <!-- Floating eco-paper badge at top -->
+        <div class="eco-badge">
+          <i class="fa-solid fa-leaf"></i>
+          <span>เพื่อลดปริมาณการใช้กระดาษ เราขอใช้การ์ดออนไลน์นี้เป็นอีกช่องทางหนึ่ง เรียนเชิญคนสำคัญของเราแทนการเชิญด้วยการ์ดกระดาษ</span>
+        </div>
+
+        <!-- Cover Image Container -->
+        <div class="cover-image-container">
+          <div class="skeleton-loader img-skeleton"></div>
+          <img src="Retouch/Wedding-584.jpg" alt="Baifern & Bew Cover" class="cover-image">
+          <div class="cover-overlay"></div>
+          <div class="cover-names">
+            <h2>BAIFERN</h2>
+            <div class="ampersand">&amp;</div>
+            <h2>BEW</h2>
+            <div class="tagline">INVITATION</div>
+          </div>
+        </div>
+
+        <!-- Invitation Details -->
+        <div class="invitation-action">
+          <p class="invite-title">เรียนเชิญเข้าร่วมงานฉลองมงคลสมรส</p>
+          
+          <button id="open-envelope-btn" class="wax-seal-btn" aria-label="Open invitation">
+            <div class="ribbon ribbon-left"></div>
+            <div class="ribbon ribbon-right"></div>
+            <div class="wax-seal">
+              <svg viewBox="0 0 100 100" class="wax-logo">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+                <path d="M38 48 C30 38, 48 30, 50 45 C52 30, 70 38, 62 48 C55 56, 50 64, 50 64 C50 64, 45 56, 38 48 Z" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.6"/>
+                <text x="33" y="58" font-family="'Cinzel', serif" font-size="24" fill="#FFFFFF" font-weight="bold">B</text>
+                <text x="46" y="50" font-family="'Cinzel', serif" font-size="12" fill="#FFFFFF">&amp;</text>
+                <text x="54" y="58" font-family="'Cinzel', serif" font-size="24" fill="#FFFFFF" font-weight="bold">B</text>
+              </svg>
+            </div>
+            <span class="pulse-ring"></span>
+          </button>
+          
+          <p class="open-instruction">แตะเพื่อเปิดการ์ดเชิญ</p>
+          <p class="open-instruction-sub">TAP TO OPEN</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP CONTAINER (Sparsely revealed after envelope opens) -->
+  <div id="main-content" class="main-layout hidden">
+    
+    <!-- Floating Music Controls -->
+    <div id="music-widget" class="music-controller">
+      <button id="music-toggle-btn" class="music-btn" aria-label="Toggle Music">
+        <i class="fa-solid fa-compact-disc spin-animation"></i>
+      </button>
+      <div class="music-tooltip">เล่นเพลง</div>
+    </div>
+
+    <!-- 2. SECTION MAIN CARD -->
+    <section id="home" class="main-card-sec">
+      <div class="hero-bg-container">
+        <!-- Skeleton for dynamic background -->
+        <div class="skeleton-loader hero-skeleton"></div>
+        <img id="hero-bg-img" src="Retouch/Wedding-28.jpg" alt="Baifern & Bew Hero" class="hero-bg-image">
+        <div class="gradient-overlay"></div>
+      </div>
+      
+      <div class="hero-content">
+        <span class="sub-headline tracking-in-expand">The Wedding Of</span>
+        <h1 class="main-couple-names font-serif">
+          <span class="first-name">Baifern</span>
+          <span class="thai-name">(Premrat)</span>
+          <span class="and-sym">&amp;</span>
+          <span class="second-name">Bew</span>
+          <span class="thai-name">(Phutthapon)</span>
+        </h1>
+        <p class="wedding-vibe-tag">Vow Ceremony</p>
+        <p class="hashtag">#BaifernBewForever</p>
+        
+        <div class="scroll-down-indicator">
+          <span>เลื่อนดูรายละเอียด</span>
+          <i class="fa-solid fa-chevron-down bounce-animation"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANDOM DIVIDER 1 -->
+    <div class="random-image-divider" data-index="0">
+      <div class="skeleton-loader divider-skeleton"></div>
+      <div class="divider-parallax-bg"></div>
+      <div class="divider-overlay"></div>
+    </div>
+
+    <!-- 3. SECTION CALENDAR & COUNTDOWN -->
+    <section id="calendar" class="calendar-sec scroll-animate">
+      <div class="sec-container">
+        <div class="luxury-card glass-morphic">
+          <div class="card-header-icon">
+            <i class="fa-regular fa-calendar-days"></i>
+          </div>
+          
+          <h2 class="section-title font-serif">Save The Date</h2>
+          
+          <div class="date-display">
+            <p class="date-th">วันศุกร์ที่ 26 กรกฎาคม 2026</p>
+            <p class="date-en">Friday, 26 July 2026</p>
+          </div>
+
+          <!-- Google Calendar Integration Button -->
+          <a id="google-calendar-link" href="#" target="_blank" class="luxury-btn btn-primary">
+            <i class="fa-solid fa-calendar-plus"></i> บันทึกลงปฏิทิน (Google Calendar)
+          </a>
+
+          <!-- Countdown -->
+          <div class="countdown-container">
+            <p class="countdown-title">COUNTDOWN TO OUR VOWS</p>
+            <div id="countdown-grid" class="countdown-grid">
+              <div class="countdown-card">
+                <span id="cd-days" class="time-num">00</span>
+                <span class="time-label">Days</span>
+              </div>
+              <div class="countdown-card">
+                <span id="cd-hours" class="time-num">00</span>
+                <span class="time-label">Hours</span>
+              </div>
+              <div class="countdown-card">
+                <span id="cd-minutes" class="time-num">00</span>
+                <span class="time-label">Minutes</span>
+              </div>
+              <div class="countdown-card">
+                <span id="cd-seconds" class="time-num">00</span>
+                <span class="time-label">Seconds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANDOM DIVIDER 2 -->
+    <div class="random-image-divider" data-index="1">
+      <div class="skeleton-loader divider-skeleton"></div>
+      <div class="divider-parallax-bg"></div>
+      <div class="divider-overlay"></div>
+    </div>
+
+    <!-- 4. SECTION WEDDING TIMELINE -->
+    <section id="timeline" class="timeline-sec scroll-animate">
+      <div class="sec-container">
+        <div class="luxury-card glass-morphic">
+          <div class="card-header-icon">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+          
+          <h2 class="section-title font-serif">Wedding Timeline</h2>
+          <p class="sec-subtitle">กำหนดการฉลองมงคลสมรส</p>
+
+          <div class="timeline-vow-container">
+            <div class="timeline-circle-deco">
+              <div class="inner-pulse"></div>
+            </div>
+            
+            <div class="timeline-details">
+              <div class="timeline-time">17:00 - 23:00 น.</div>
+              <div class="timeline-title-text">กำหนดการ เริ่มงาน</div>
+              <p class="timeline-desc">
+                ร่วมเป็นสักขีพยานและเฉลิมฉลองในพิธีแลกคำมั่นสัญญา (Vow Ceremony) 
+                ณ ริมชายหาดอันอบอุ่น ดื่มด่ำบรรยากาศยามเย็นพร้อมรับประทานอาหารค่ำร่วมกัน
+              </p>
+            </div>
+          </div>
+          
+          <!-- Decorative prewedding thumbnail in timeline -->
+          <div class="timeline-photo-wrapper">
+            <div class="skeleton-loader img-skeleton"></div>
+            <img src="Retouch/Wedding-175.jpg" alt="Vow ceremony timeline" class="timeline-photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANDOM DIVIDER 3 -->
+    <div class="random-image-divider" data-index="2">
+      <div class="skeleton-loader divider-skeleton"></div>
+      <div class="divider-parallax-bg"></div>
+      <div class="divider-overlay"></div>
+    </div>
+
+    <!-- 5. SECTION LOCATION -->
+    <section id="map-sec" class="location-sec scroll-animate">
+      <div class="sec-container">
+        <div class="luxury-card glass-morphic">
+          <div class="card-header-icon">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          
+          <h2 class="section-title font-serif">Wedding Venue</h2>
+          <p class="venue-name font-serif">Beach Yard Hostel Koh Phangan</p>
+          <p class="venue-address">หาดริ้น อำเภอเกาะพะงัน จังหวัดสุราษฎร์ธานี</p>
+
+          <!-- Embedded Static Map Graphic / Design Interface -->
+          <div class="map-preview-card">
+            <div class="skeleton-loader map-skeleton"></div>
+            <img src="Retouch/Wedding-361.jpg" alt="Beach Yard Hostel Koh Phangan Location" class="map-bg-preview">
+            <div class="map-inner-overlay">
+              <div class="venue-badge">
+                <i class="fa-solid fa-location-pin red-pin"></i>
+                <span>Beach Yard Hostel</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Maps Button -->
+          <a href="https://maps.app.goo.gl/WGRGu3jS6G96fYv58" target="_blank" class="luxury-btn btn-accent">
+            <i class="fa-solid fa-location-arrow"></i> เปิดแผนที่ Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANDOM DIVIDER 4 -->
+    <div class="random-image-divider" data-index="3">
+      <div class="skeleton-loader divider-skeleton"></div>
+      <div class="divider-parallax-bg"></div>
+      <div class="divider-overlay"></div>
+    </div>
+
+    <!-- 6. SECTION GALLERY -->
+    <section id="gallery" class="gallery-sec scroll-animate">
+      <div class="sec-container-fluid">
+        <div class="gallery-header text-center">
+          <div class="card-header-icon">
+            <i class="fa-regular fa-images"></i>
+          </div>
+          <h2 class="section-title font-serif">Pre-Wedding Gallery</h2>
+          <p class="sec-subtitle">ภาพความทรงจำของเราทั้งสองคน</p>
+        </div>
+
+        <!-- Set Selection Tabs -->
+        <div class="gallery-tabs-container">
+          <div class="gallery-tabs">
+            <button class="gallery-tab active" data-set="1">Set 01</button>
+            <button class="gallery-tab" data-set="2">Set 02</button>
+            <button class="gallery-tab" data-set="3">Set 03</button>
+            <button class="gallery-tab" data-set="4">Set 04</button>
+            <button class="gallery-tab" data-set="5">Set 05</button>
+            <button class="gallery-tab" data-set="6">Set 06</button>
+          </div>
+        </div>
+
+        <!-- Grid Images Container -->
+        <div id="gallery-grid" class="gallery-grid">
+          <!-- Dynamically populated via JS with skeleton states -->
+        </div>
+      </div>
+    </section>
+
+    <!-- RANDOM DIVIDER 5 -->
+    <div class="random-image-divider" data-index="4">
+      <div class="skeleton-loader divider-skeleton"></div>
+      <div class="divider-parallax-bg"></div>
+      <div class="divider-overlay"></div>
+    </div>
+
+    <!-- 7. SECTION RSVP (แบบตอบกลับคำเชิญ) -->
+    <section id="rsvp-sec" class="rsvp-sec scroll-animate">
+      <div class="sec-container">
+        <div class="luxury-card glass-morphic">
+          <div class="card-header-icon">
+            <i class="fa-regular fa-envelope-open"></i>
+          </div>
+          
+          <h2 class="section-title font-serif">RSVP</h2>
+          <p class="sec-subtitle">แบบตอบกลับคำเชิญ</p>
+          <div class="rsvp-deadline">กรุณาตอบกลับภายในวันที่ 15 มิถุนายน 2026</div>
+
+          <!-- RSVP Form -->
+          <form id="rsvp-form" class="rsvp-form-container">
+            <!-- Guest Name -->
+            <div class="form-group">
+              <label for="guest-name" class="form-label">ชื่อ-นามสกุล ของท่าน</label>
+              <input type="text" id="guest-name" name="name" class="form-input" placeholder="กรุณาระบุชื่อในการพิมพ์การ์ด" required>
+            </div>
+
+            <!-- Attendance Choice -->
+            <div class="form-group">
+              <label class="form-label">การเข้าร่วมงาน</label>
+              <div class="attendance-options">
+                <button type="button" class="attend-choice-btn active" data-value="attend">
+                  <i class="fa-solid fa-check-circle"></i> ยินดีเข้าร่วมงาน
+                </button>
+                <button type="button" class="attend-choice-btn" data-value="absent">
+                  <i class="fa-solid fa-times-circle"></i> ขอแสดงความยินดี แต่ไม่สะดวกเข้าร่วมงาน
+                </button>
+              </div>
+              <input type="hidden" id="attendance-status" name="status" value="attend">
+            </div>
+
+            <!-- Conditional Section for Attending Guests -->
+            <div id="attending-details" class="attending-details">
+              
+              <!-- Followers Counter -->
+              <div class="form-group">
+                <label class="form-label">จำนวนผู้ติดตาม (ไม่รวมตัวท่าน)</label>
+                <div class="followers-counter-container">
+                  <button type="button" id="btn-minus-follower" class="counter-btn" aria-label="Decrease followers">-</button>
+                  <input type="number" id="followers-count" name="followers" value="0" min="0" max="10" readonly class="counter-val">
+                  <button type="button" id="btn-plus-follower" class="counter-btn" aria-label="Increase followers">+</button>
+                </div>
+              </div>
+
+              <!-- Accommodations Checkbox -->
+              <div class="form-group checkbox-group">
+                <label class="checkbox-container">
+                  <input type="checkbox" id="need-accommodation" name="need_accommodation">
+                  <span class="custom-checkmark"></span>
+                  <span class="checkbox-text">ต้องการเข้าพักที่ Beach Yard Hostel (ที่พักเตียงรวม 4-6 ท่าน)</span>
+                </label>
+              </div>
+
+              <!-- Check-in / Check-out Date Range Picker (Visible if accommodation checkbox is checked) -->
+              <div id="accommodation-dates" class="form-group date-picker-group hidden">
+                <label class="form-label">ช่วงเวลาการเข้าพัก</label>
+                <div class="date-inputs">
+                  <div class="date-field">
+                    <span class="date-label">เข้าพัก (Check-in)</span>
+                    <input type="date" id="check-in-date" name="check_in_date" min="2026-07-20" max="2026-07-31" class="form-input">
+                  </div>
+                  <div class="date-field">
+                    <span class="date-label">ออกพัก (Check-out)</span>
+                    <input type="date" id="check-out-date" name="check_out_date" min="2026-07-20" max="2026-07-31" class="form-input">
+                  </div>
+                </div>
+                <small class="help-text">ที่พักให้บริการในช่วงวันที่ 20 ถึง 31 กรกฎาคม 2026</small>
+              </div>
+
+            </div>
+
+            <!-- Best Wishes Text Area -->
+            <div class="form-group">
+              <label for="best-wishes" class="form-label">คำอวยพรถึงบ่าวสาว</label>
+              <textarea id="best-wishes" name="wishes" class="form-textarea" rows="3" placeholder="เขียนคำอวยพรสั้นๆ ถึงใบเฟิร์นและบิว"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submit-rsvp-btn" class="luxury-btn btn-primary btn-submit">
+              <span class="btn-text">ส่งแบบตอบกลับ</span>
+              <span class="btn-loading hidden"><i class="fa-solid fa-spinner fa-spin"></i> กำลังส่งข้อมูล...</span>
+            </button>
+          </form>
+
+          <!-- Configuration Status Message for user's Google Sheet API endpoint -->
+          <div id="rsvp-status-msg" class="rsvp-status-msg hidden">
+            <!-- JS will update this on success or error -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANDOM DIVIDER 6 -->
+    <div class="random-image-divider" data-index="5">
+      <div class="skeleton-loader divider-skeleton"></div>
+      <div class="divider-parallax-bg"></div>
+      <div class="divider-overlay"></div>
+    </div>
+
+    <!-- 8. SECTION DRESS CODE -->
+    <section id="dresscode" class="dresscode-sec scroll-animate">
+      <div class="sec-container">
+        <div class="luxury-card glass-morphic">
+          <div class="card-header-icon">
+            <i class="fa-solid fa-shirt"></i>
+          </div>
+          
+          <h2 class="section-title font-serif">Dress Code</h2>
+          <p class="sec-subtitle">ธีมสีสำหรับแขกผู้มีเกียรติ</p>
+          <p class="dresscode-desc">เพื่อความสวยงามในภาพถ่าย ร่วมแต่งกายด้วยชุดโทนสีธรรมชาติริมชายหาด <strong>(กรุณาละเว้นโทนสีขาว)</strong></p>
+
+          <!-- Swatches Grid -->
+          <div class="swatches-grid">
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #FFC857;"></div>
+              <span class="color-name">GOLDEN YELLOW</span>
+              <span class="color-code">#FFC857</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #F7E7CE;"></div>
+              <span class="color-name">CHAMPAGNE</span>
+              <span class="color-code">#F7E7CE</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #FFCBA4;"></div>
+              <span class="color-name">PEACH</span>
+              <span class="color-code">#FFCBA4</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #FF7F50;"></div>
+              <span class="color-name">CORAL</span>
+              <span class="color-code">#FF7F50</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #E9743C;"></div>
+              <span class="color-name">BURNT ORANGE</span>
+              <span class="color-code">#E9743C</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #C65A3A;"></div>
+              <span class="color-name">TERRACOTTA</span>
+              <span class="color-code">#C65A3A</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #F7C6CC;"></div>
+              <span class="color-name">SOFT PINK</span>
+              <span class="color-code">#F7C6CC</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #EBC8B1;"></div>
+              <span class="color-name">WARM NUDE</span>
+              <span class="color-code">#EBC8B1</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #E6D6B8;"></div>
+              <span class="color-name">SANDY BEIGE</span>
+              <span class="color-code">#E6D6B8</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #B87433;"></div>
+              <span class="color-name">BRONZE</span>
+              <span class="color-code">#B87433</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #40C4C4;"></div>
+              <span class="color-name">TURQUOISE</span>
+              <span class="color-code">#40C4C4</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #1E7FA1;"></div>
+              <span class="color-name">OCEAN BLUE</span>
+              <span class="color-code">#1E7FA1</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #A8DCD6;"></div>
+              <span class="color-name">SEAFOAM</span>
+              <span class="color-code">#A8DCD6</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. SECTION CONTACT & FOOTER -->
+    <section id="contact" class="contact-sec scroll-animate">
+      <div class="sec-container">
+        <div class="luxury-card glass-morphic text-center">
+          <div class="card-header-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          
+          <h2 class="section-title font-serif">Contact Us</h2>
+          <p class="sec-subtitle">ติดต่อสอบถามข้อมูลเพิ่มเติม</p>
+
+          <div class="contact-numbers">
+            <div class="contact-row">
+              <span class="contact-name">คุณใบเฟิร์น (Baifern)</span>
+              <a href="tel:093-628-5988" class="contact-link"><i class="fa-solid fa-phone-flip"></i> 093-628-5988</a>
+            </div>
+            <div class="contact-row">
+              <span class="contact-name">คุณบิว (Bew)</span>
+              <a href="tel:097-293-6456" class="contact-link"><i class="fa-solid fa-phone-flip"></i> 097-293-6456</a>
+            </div>
+          </div>
+
+          <div class="sorry-invite">
+            ขออภัยหากมิได้เรียนเชิญด้วยตนเอง
+          </div>
+
+          <!-- Thank You Section -->
+          <div class="thank-you-wrapper">
+            <div class="skeleton-loader thank-you-skeleton"></div>
+            <img id="thank-you-img" src="" alt="Thank you" class="thank-you-img">
+            <div class="thank-you-overlay">
+              <h3 class="thank-you-text">Thank You</h3>
+              <p class="thank-you-sub">ขอบคุณที่เป็นส่วนหนึ่งในวันสำคัญของเรา</p>
+            </div>
+          </div>
+
+          <footer class="footer-wrapper">
+            <p class="couple-tag">Baifern & Bew Wedding Vows © 2026</p>
+            <div class="mootu-credit">
+              <a href="https://www.facebook.com/Mootu00/" target="_blank" rel="noopener noreferrer">powered by.mootu</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. BOTTOM FIXED NAVIGATION BAR -->
+    <nav class="bottom-nav">
+      <a href="#home" class="nav-item active">
+        <i class="fa-solid fa-house"></i>
+        <span>หน้าแรก</span>
+      </a>
+      <a href="#calendar" class="nav-item">
+        <i class="fa-regular fa-calendar-days"></i>
+        <span>กำหนดวัน</span>
+      </a>
+      <a href="#gallery" class="nav-item">
+        <i class="fa-regular fa-images"></i>
+        <span>คลังภาพ</span>
+      </a>
+      <a href="#map-sec" class="nav-item">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <span>แผนที่</span>
+      </a>
+      <a href="#rsvp-sec" class="nav-item">
+        <i class="fa-regular fa-envelope-open"></i>
+        <span>ตอบรับ</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- MODERN INTERACTIVE LIGHTBOX FOR GALLERY -->
+  <div id="gallery-lightbox" class="lightbox-overlay">
+    <button class="lightbox-close-btn" aria-label="Close Lightbox"><i class="fa-solid fa-xmark"></i></button>
+    
+    <div class="lightbox-content">
+      <div class="lightbox-img-wrapper">
+        <img id="lightbox-image" src="" alt="Lightbox Zoomed">
+      </div>
+      
+      <!-- Interactive Lightbox Toolbar -->
+      <div class="lightbox-toolbar">
+        <button id="lightbox-zoom-btn" class="toolbar-btn" aria-label="Zoom Image"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+        <button id="lightbox-like-btn" class="toolbar-btn" aria-label="Like Image">
+          <i class="fa-regular fa-heart"></i>
+          <span id="lightbox-like-count" class="like-count">0</span>
+        </button>
+        <a id="lightbox-download-link" href="" download class="toolbar-btn" aria-label="Save Image"><i class="fa-solid fa-download"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GSAP Animation Engine via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
