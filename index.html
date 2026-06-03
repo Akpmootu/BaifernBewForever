@@ -42,54 +42,42 @@
 
   <!-- 1. ENVELOPE COVER PAGE (ซองเปิดการ์ด) -->
   <div id="envelope-cover" class="envelope-wrapper">
-    <div class="leaf-decorations">
-      <div class="leaf leaf-1"></div>
-      <div class="leaf leaf-2"></div>
+    <!-- Fullscreen Background Image -->
+    <div class="envelope-bg">
+      <div class="skeleton-loader img-skeleton"></div>
+      <img src="Retouch/Wedding-584.jpg" alt="Baifern & Bew Cover" class="cover-image-fullscreen">
+      <div class="cover-overlay-fullscreen"></div>
     </div>
-    
-    <div class="envelope-container">
-      <div class="envelope-card">
-        <!-- Floating eco-paper badge at top -->
-        <div class="eco-badge">
-          <i class="fa-solid fa-leaf"></i>
-          <span>เพื่อลดปริมาณการใช้กระดาษ เราขอใช้การ์ดออนไลน์นี้เป็นอีกช่องทางหนึ่ง เรียนเชิญคนสำคัญของเราแทนการเชิญด้วยการ์ดกระดาษ</span>
-        </div>
 
-        <!-- Cover Image Container -->
-        <div class="cover-image-container">
-          <div class="skeleton-loader img-skeleton"></div>
-          <img src="Retouch/Wedding-584.jpg" alt="Baifern & Bew Cover" class="cover-image">
-          <div class="cover-overlay"></div>
-          <div class="cover-names">
-            <h2>BAIFERN</h2>
-            <div class="ampersand">&amp;</div>
-            <h2>BEW</h2>
-            <div class="tagline">INVITATION</div>
+    <div class="envelope-content-fullscreen">
+      <!-- Top Section: Names & Invitation -->
+      <div class="envelope-names-container animate-fade-in-down">
+        <h2 class="envelope-title-names">BAIFERN</h2>
+        <div class="envelope-ampersand">&amp;</div>
+        <h2 class="envelope-title-names">BEW</h2>
+        <div class="envelope-tagline">INVITATION</div>
+        <p class="envelope-invite-text">เรียนเชิญเข้าร่วมงานฉลองมงคลสมรส</p>
+      </div>
+
+      <!-- Bottom Section: Wax Seal Action & Open instructions -->
+      <div class="envelope-action-container">
+        <button id="open-envelope-btn" class="wax-seal-btn" aria-label="Open invitation">
+          <div class="ribbon ribbon-left"></div>
+          <div class="ribbon ribbon-right"></div>
+          <div class="wax-seal">
+            <svg viewBox="0 0 100 100" class="wax-logo">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+              <path d="M38 48 C30 38, 48 30, 50 45 C52 30, 70 38, 62 48 C55 56, 50 64, 50 64 C50 64, 45 56, 38 48 Z" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.6"/>
+              <text x="33" y="58" font-family="'Cinzel', serif" font-size="24" fill="#FFFFFF" font-weight="bold">B</text>
+              <text x="46" y="50" font-family="'Cinzel', serif" font-size="12" fill="#FFFFFF">&amp;</text>
+              <text x="54" y="58" font-family="'Cinzel', serif" font-size="24" fill="#FFFFFF" font-weight="bold">B</text>
+            </svg>
           </div>
-        </div>
-
-        <!-- Invitation Details -->
-        <div class="invitation-action">
-          <p class="invite-title">เรียนเชิญเข้าร่วมงานฉลองมงคลสมรส</p>
-          
-          <button id="open-envelope-btn" class="wax-seal-btn" aria-label="Open invitation">
-            <div class="ribbon ribbon-left"></div>
-            <div class="ribbon ribbon-right"></div>
-            <div class="wax-seal">
-              <svg viewBox="0 0 100 100" class="wax-logo">
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
-                <path d="M38 48 C30 38, 48 30, 50 45 C52 30, 70 38, 62 48 C55 56, 50 64, 50 64 C50 64, 45 56, 38 48 Z" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.6"/>
-                <text x="33" y="58" font-family="'Cinzel', serif" font-size="24" fill="#FFFFFF" font-weight="bold">B</text>
-                <text x="46" y="50" font-family="'Cinzel', serif" font-size="12" fill="#FFFFFF">&amp;</text>
-                <text x="54" y="58" font-family="'Cinzel', serif" font-size="24" fill="#FFFFFF" font-weight="bold">B</text>
-              </svg>
-            </div>
-            <span class="pulse-ring"></span>
-          </button>
-          
-          <p class="open-instruction">แตะเพื่อเปิดการ์ดเชิญ</p>
-          <p class="open-instruction-sub">TAP TO OPEN</p>
-        </div>
+          <span class="pulse-ring"></span>
+        </button>
+        
+        <p class="open-instruction">แตะเพื่อเปิดการ์ดเชิญ</p>
+        <p class="open-instruction-sub">TAP TO OPEN</p>
       </div>
     </div>
   </div>
