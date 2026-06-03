@@ -12,7 +12,7 @@ const RETOUCH_IMAGES = [
 const SETS_IMAGES = {
   1: [
     "set 1/1.jpg", "set 1/2.jpg", "set 1/3.jpg", "set 1/4.jpg", "set 1/5.jpg",
-    "set 1/6.jpg", "set 1/7.jpg", "set 1/8.jpg", "set 1/9.jpg", "set 1/10.jpg"
+    "set 1/6.jpg", "set 1/7.jpg", "set 1/8.jpg", "set 1/9.jpg"
   ],
   2: [
     "set 2/1.jpg", "set 2/2.jpg", "set 2/3.jpg", "set 2/4.jpg", "set 2/5.jpg",
