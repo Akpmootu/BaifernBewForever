@@ -8,7 +8,7 @@
   
   <!-- Open Graph Meta Tags (Rich Link Preview) -->
   <meta property="og:title" content="Baifern & Bew | E-Wedding Card">
-  <meta property="og:description" content="เรียนเชิญร่วมงานฉลองมงคลสมรส Baifern (Premrat) & Bew (Phutthapon) #BaifernBewForever วันศุกร์ที่ 26 กรกฎาคม 2026 ณ Beach Yard Hostel Koh Phangan">
+  <meta property="og:description" content="เรียนเชิญร่วมงานฉลองมงคลสมรส Baifern & Bew #BBVOWS วันศุกร์ที่ 26 กรกฎาคม 2026 ณ Beach Yard Hostel Koh Phangan">
   <meta property="og:image" content="Retouch/Wedding-584.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -19,7 +19,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Sarabun:wght@200;300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Alex+Brush&display=swap" rel="stylesheet">
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -117,13 +117,11 @@
         <span class="sub-headline tracking-in-expand">The Wedding Of</span>
         <h1 class="main-couple-names font-serif">
           <span class="first-name">Baifern</span>
-          <span class="thai-name">(Premrat)</span>
           <span class="and-sym">&amp;</span>
           <span class="second-name">Bew</span>
-          <span class="thai-name">(Phutthapon)</span>
         </h1>
         <p class="wedding-vibe-tag">Vow Ceremony</p>
-        <p class="hashtag">#BaifernBewForever</p>
+        <p class="hashtag">#BBVOWS</p>
         
         <div class="scroll-down-indicator">
           <span>เลื่อนดูรายละเอียด</span>
@@ -155,8 +153,8 @@
           </div>
 
           <!-- Google Calendar Integration Button -->
-          <a id="google-calendar-link" href="#" target="_blank" class="luxury-btn btn-primary">
-            <i class="fa-solid fa-calendar-plus"></i> บันทึกลงปฏิทิน (Google Calendar)
+          <a id="google-calendar-link" href="#" target="_blank" class="luxury-btn btn-primary text-center">
+            <i class="fa-solid fa-calendar-plus"></i> <span>บันทึกลงปฏิทิน<br>(Google Calendar)</span>
           </a>
 
           <!-- Countdown -->
@@ -243,8 +241,8 @@
           </div>
           
           <h2 class="section-title font-serif">Wedding Venue</h2>
-          <p class="venue-name font-serif">Beach Yard Hostel Koh Phangan</p>
-          <p class="venue-address">หาดริ้น อำเภอเกาะพะงัน จังหวัดสุราษฎร์ธานี</p>
+          <p class="venue-name font-serif">Beach Yard Hostel<br>Koh Phangan</p>
+          <p class="venue-address">บ้านใต้ อำเภอเกาะพะงัน จังหวัดสุราษฎร์ธานี</p>
 
           <!-- Embedded Static Map Graphic / Design Interface -->
           <div class="map-preview-card">
@@ -401,6 +399,26 @@
           <div id="rsvp-status-msg" class="rsvp-status-msg hidden">
             <!-- JS will update this on success or error -->
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7.5 SECTION SPECIAL GIFT (ร่วมแสดงความยินดีผ่านช่องทางออนไลน์) -->
+    <section id="gift-sec" class="gift-sec scroll-animate">
+      <div class="sec-container">
+        <div class="luxury-card glass-morphic text-center">
+          <div class="card-header-icon">
+            <i class="fa-solid fa-gift"></i>
+          </div>
+          <h2 class="section-title font-serif">Special Gift</h2>
+          <p class="sec-subtitle">ร่วมแสดงความยินดีผ่านช่องทางออนไลน์</p>
+          
+          <button id="open-gift-btn" class="gift-circle-btn">
+            <div class="gift-circle-content">
+              <i class="fa-solid fa-gift"></i>
+              <span>CLICK HERE</span>
+            </div>
+          </button>
         </div>
       </div>
     </section>
@@ -584,6 +602,22 @@
           <span id="lightbox-like-count" class="like-count">0</span>
         </button>
         <a id="lightbox-download-link" href="" download class="toolbar-btn" aria-label="Save Image"><i class="fa-solid fa-download"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPECIAL GIFT MODAL FOR QR CODE -->
+  <div id="gift-modal" class="lightbox-overlay">
+    <button id="gift-modal-close" class="lightbox-close-btn" aria-label="Close Gift Modal"><i class="fa-solid fa-xmark"></i></button>
+    
+    <div class="gift-modal-content">
+      <div class="gift-qr-wrapper">
+        <img src="Gift.jpg" alt="Gift QR Code" class="gift-qr-img">
+      </div>
+      <div class="gift-modal-actions">
+        <a href="Gift.jpg" download="Gift_QR_Code.jpg" class="luxury-btn btn-primary" style="margin-top: 1.5rem; width: auto; padding: 0.8rem 2rem;">
+          <i class="fa-solid fa-download"></i> ดาวน์โหลดภาพ QR Code
+        </a>
       </div>
     </div>
   </div>

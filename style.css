@@ -1,5 +1,42 @@
 /* style.css - Luxury E-Wedding Card Design System */
 
+@font-face {
+  font-family: 'The Seasons';
+  src: url('The-Seasons/Fontspring-DEMO-theseasons-reg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'The Seasons';
+  src: url('The-Seasons/Fontspring-DEMO-theseasons-it.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'The Seasons';
+  src: url('The-Seasons/Fontspring-DEMO-theseasons-bd.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'The Seasons';
+  src: url('The-Seasons/Fontspring-DEMO-theseasons-bdit.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'The Seasons';
+  src: url('The-Seasons/Fontspring-DEMO-theseasons-lt.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'The Seasons';
+  src: url('The-Seasons/Fontspring-DEMO-theseasons-ltit.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
 /* -------------------------------------------------------------
    1. DESIGN TOKENS & RESET
    ------------------------------------------------------------- */
@@ -28,8 +65,8 @@
   --border-glass: rgba(255, 255, 255, 0.4);
   --shadow-luxury: 0 16px 36px rgba(184, 116, 51, 0.08);
   --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  --font-serif: 'Cinzel', 'Playfair Display', serif;
-  --font-sans: 'Montserrat', 'Sarabun', sans-serif;
+  --font-serif: 'The Seasons', 'Cinzel', serif;
+  --font-sans: 'Kanit', sans-serif;
   --font-cursive: 'Alex Brush', cursive;
 }
 
@@ -226,7 +263,7 @@ img {
   border: 1.5px dashed var(--color-terracotta);
   border-radius: 12px;
   padding: 0.8rem 1rem;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--text-dark);
   margin-bottom: 1.5rem;
   display: flex;
@@ -402,17 +439,17 @@ img {
 }
 
 .open-instruction {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 1.15rem;
+  font-weight: 600;
   color: var(--text-gold);
   letter-spacing: 1px;
 }
 
 .open-instruction-sub {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  letter-spacing: 2px;
-  margin-top: 0.1rem;
+  letter-spacing: 3px;
+  margin-top: 0.2rem;
 }
 
 /* -------------------------------------------------------------
@@ -1977,4 +2014,209 @@ section {
     transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(0.1) rotate(360deg);
     opacity: 0;
   }
+}
+
+/* -------------------------------------------------------------
+   17. SPECIAL GIFT & MODAL STYLING
+   ------------------------------------------------------------- */
+.gift-sec {
+  padding: 4rem 1rem;
+}
+
+.gift-circle-btn {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid rgba(184, 116, 51, 0.15);
+  box-shadow: 0 10px 25px rgba(184, 116, 51, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition-smooth);
+  margin: 1.5rem auto 0 auto;
+}
+
+.gift-circle-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 30px rgba(184, 116, 51, 0.2);
+}
+
+.gift-circle-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gift-circle-content i {
+  font-size: 2.2rem;
+  color: var(--color-bronze);
+}
+
+.gift-circle-content span {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: var(--color-bronze);
+  font-weight: 600;
+}
+
+.gift-modal-content {
+  width: 90%;
+  max-width: 400px;
+  background: #FAF6F0;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+  padding: 2.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  animation: modal-zoom-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes modal-zoom-in {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.gift-qr-wrapper {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(184, 116, 51, 0.1);
+}
+
+.gift-qr-img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+.gift-modal-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* -------------------------------------------------------------
+   18. GOOGLE KANIT FONT CLASSES
+   ------------------------------------------------------------- */
+.kanit-thin {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.kanit-extralight {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.kanit-light {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kanit-medium {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.kanit-semibold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.kanit-bold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.kanit-extrabold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.kanit-black {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.kanit-thin-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.kanit-extralight-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.kanit-light-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.kanit-regular-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.kanit-medium-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.kanit-semibold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.kanit-bold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.kanit-extrabold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.kanit-black-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: italic;
 }

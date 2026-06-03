@@ -99,13 +99,13 @@ let ytPlayRequested = false;
 // Callback when YouTube API is ready
 window.onYouTubeIframeAPIReady = function() {
   ytPlayer = new YT.Player('youtube-player', {
-    videoId: 'bjjC1-G6Fxo',
+    videoId: '3mYVyVY-lU4',
     playerVars: {
       'autoplay': 0,
       'controls': 0,
       'disablekb': 1,
       'loop': 1,
-      'playlist': 'bjjC1-G6Fxo', // Required for looping single video
+      'playlist': '3mYVyVY-lU4', // Required for looping single video
       'rel': 0,
       'showinfo': 0,
       'start': 7 // Start at 7 seconds as requested
@@ -303,12 +303,12 @@ function setupRandomDividers() {
 // 5. CALENDAR & COUNTDOWN TIMERS
 function setupGoogleCalendarLink() {
   const calendarLink = document.getElementById("google-calendar-link");
-  const title = encodeURIComponent("The Wedding of Baifern & Bew (#BaifernBewForever)");
+  const title = encodeURIComponent("The Wedding of Baifern & Bew (#BBVOWS)");
   const dates = "20260726T170000/20260726T230000"; // Friday, July 26, 2026. 17:00 to 23:00
   const details = encodeURIComponent(
-    "เรียนเชิญร่วมงานฉลองมงคลสมรสคุณใบเฟิร์น (Premrat) และคุณบิว (Phutthapon)\n\n" +
+    "เรียนเชิญร่วมงานฉลองมงคลสมรสคุณใบเฟิร์น และคุณบิว\n\n" +
     "กำหนดการเริ่มงาน: 17:00 - 23:00 น.\n" +
-    "แฮชแท็ก: #BaifernBewForever\n\n" +
+    "แฮชแท็ก: #BBVOWS\n\n" +
     "จัดงาน ณ Beach Yard Hostel Koh Phangan สไตล์ Vow Ceremony ริมชายหาดอันโรแมนติก"
   );
   const location = encodeURIComponent("Beach Yard Hostel khophangan");
@@ -727,6 +727,29 @@ function randomizeThankYouBackground() {
   }
 }
 
+// 8.5 SPECIAL GIFT MODAL CONTROL
+function setupGiftModal() {
+  const openGiftBtn = document.getElementById("open-gift-btn");
+  const giftModal = document.getElementById("gift-modal");
+  const giftModalClose = document.getElementById("gift-modal-close");
+
+  if (openGiftBtn && giftModal && giftModalClose) {
+    openGiftBtn.addEventListener("click", () => {
+      giftModal.classList.add("show");
+    });
+    
+    giftModalClose.addEventListener("click", () => {
+      giftModal.classList.remove("show");
+    });
+    
+    giftModal.addEventListener("click", (e) => {
+      if (e.target === giftModal) {
+        giftModal.classList.remove("show");
+      }
+    });
+  }
+}
+
 // 11. APP ENTRY POINT
 function initApp() {
   randomizeRetouchImages();
@@ -734,6 +757,7 @@ function initApp() {
   setupGoogleCalendarLink();
   startCountdown();
   randomizeThankYouBackground();
+  setupGiftModal();
   
   // Create gold sparkles on the envelope cover
   createGoldenSparkles();
