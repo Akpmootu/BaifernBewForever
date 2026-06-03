@@ -12,7 +12,7 @@ const RETOUCH_IMAGES = [
 const SETS_IMAGES = {
   1: [
     "set 1/1.jpg", "set 1/2.jpg", "set 1/3.jpg", "set 1/4.jpg", "set 1/5.jpg",
-    "set 1/6.jpg", "set 1/7.jpg", "set 1/8.jpg", "set 1/9.jpg"
+    "set 1/6.jpg", "set 1/7.jpg", "set 1/8.jpg", "set 1/9.jpg", "set 1/10.jpg"
   ],
   2: [
     "set 2/1.jpg", "set 2/2.jpg", "set 2/3.jpg", "set 2/4.jpg", "set 2/5.jpg",
@@ -304,7 +304,7 @@ function setupRandomDividers() {
 function setupGoogleCalendarLink() {
   const calendarLink = document.getElementById("google-calendar-link");
   const title = encodeURIComponent("The Wedding of Baifern & Bew (#BBVOWS)");
-  const dates = "20260726T170000/20260726T230000"; // Friday, July 26, 2026. 17:00 to 23:00
+  const dates = "20260726T170000/20260726T230000"; // Sunday, July 26, 2026. 17:00 to 23:00
   const details = encodeURIComponent(
     "เรียนเชิญร่วมงานฉลองมงคลสมรสคุณใบเฟิร์น และคุณบิว\n\n" +
     "กำหนดการเริ่มงาน: 17:00 - 23:00 น.\n" +
