@@ -60,10 +60,6 @@ const attendingDetails = document.getElementById("attending-details");
 const btnMinusFollower = document.getElementById("btn-minus-follower");
 const btnPlusFollower = document.getElementById("btn-plus-follower");
 const followersCountInput = document.getElementById("followers-count");
-const needAccommodationCheckbox = document.getElementById("need-accommodation");
-const accommodationDates = document.getElementById("accommodation-dates");
-const checkInInput = document.getElementById("check-in-date");
-const checkOutInput = document.getElementById("check-out-date");
 const submitRsvpBtn = document.getElementById("submit-rsvp-btn");
 const rsvpStatusMsg = document.getElementById("rsvp-status-msg");
 
@@ -530,28 +526,7 @@ btnPlusFollower.addEventListener("click", () => {
   }
 });
 
-// Accommodation checkbox toggle
-needAccommodationCheckbox.addEventListener("change", () => {
-  if (needAccommodationCheckbox.checked) {
-    accommodationDates.classList.remove("hidden");
-    checkInInput.required = true;
-    checkOutInput.required = true;
-  } else {
-    accommodationDates.classList.add("hidden");
-    checkInInput.required = false;
-    checkOutInput.required = false;
-    checkInInput.value = "";
-    checkOutInput.value = "";
-  }
-});
 
-// Datepicker constraints
-checkInInput.addEventListener("change", () => {
-  if (checkInInput.value) {
-    // Checkout date must be after check-in date
-    checkOutInput.min = checkInInput.value;
-  }
-});
 
 // Submit RSVP Form
 rsvpForm.addEventListener("submit", (e) => {
@@ -567,9 +542,9 @@ rsvpForm.addEventListener("submit", (e) => {
     name: document.getElementById("guest-name").value,
     status: attendanceStatusInput.value,
     followers: parseInt(followersCountInput.value) || 0,
-    need_accommodation: needAccommodationCheckbox.checked,
-    check_in_date: checkInInput.value || "",
-    check_out_date: checkOutInput.value || "",
+    need_accommodation: false,
+    check_in_date: "",
+    check_out_date: "",
     wishes: document.getElementById("best-wishes").value
   };
   
@@ -615,8 +590,6 @@ function showSubmissionResult(isSuccess, message) {
     attendChoiceBtns.forEach(b => b.classList.remove("active"));
     document.querySelector("[data-value='attend']").classList.add("active");
     attendingDetails.classList.remove("hidden");
-    accommodationDates.classList.add("hidden");
-    needAccommodationCheckbox.checked = false;
   }
 }
 
